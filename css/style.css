@@ -7,11 +7,11 @@ p {
 }
 
 a {
-  color: #fed136;
+  color: #10bf26;
 }
 
 a:hover {
-  color: #fec503;
+  color: #19672b;
 }
 
 .text-primary {
@@ -35,22 +35,22 @@ section {
 section h2.section-heading {
   font-family: 'Droid Serif', serif;
   font-weight: 400;
-  font-size: 40px;  
-  margin-top: 0; 
+  font-size: 40px;
+  margin-top: 0;
   margin-bottom: 15px;
 }
 
 section h3.section-subheading {
-  font-size: 1.2em;  
-  font-weight: 300;  
-  font-style: italic;  
+  font-size: 1.2em;
+  font-weight: 300;
+  font-style: italic;
   text-transform: none;
   margin-bottom: 5em;
 }
 
 section h3.text-highlighted {
   font-size: 1.3em;
-  font-style: normal; 
+  font-style: normal;
   font-weight: 400;
 }
 
@@ -75,7 +75,7 @@ section h3.text-highlighted {
 .btn-primary:active,
 .btn-primary:focus,
 .btn-primary:hover {
-  color: white;     
+  color: white;
   border-color: #fec810 !important;
   background-color: #fec810 !important;
 }
@@ -131,6 +131,7 @@ img::-moz-selection {
 
 .alert {
   border-radius: 0px;
+  font-size: 20px;
 }
 /****************/
 /*  NAVIGATION  */
@@ -146,11 +147,11 @@ img::-moz-selection {
 #mainNav .navbar-toggler {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.25em;
-  font-weight: 100;  
+  font-weight: 100;
   /*color: white;*/
   color: #9DA6B3;
   border: none;
-  right: 0;  
+  right: 0;
 }
 
 #mainNav .navbar-brand {
@@ -161,8 +162,8 @@ img::-moz-selection {
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1em;
-  font-weight: 200;  
-  letter-spacing: 1px;  
+  font-weight: 200;
+  letter-spacing: 1px;
   line-height: 1em;
   color: white;
 }
@@ -178,7 +179,7 @@ img::-moz-selection {
     padding: 7px 0;
   }
 
-  #mainNav .navbar-brand img {  
+  #mainNav .navbar-brand img {
     height: 30px;
   }
 
@@ -190,28 +191,28 @@ img::-moz-selection {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 25px;  
-    padding-bottom: 25px;          
-    -webkit-transition: padding-top .3s, padding-bottom .3s;             
-    -moz-transition: padding-top .3s, padding-bottom .3s;                  
-    transition: padding-top .3s, padding-bottom .3s;  
-    border: none;  
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top .3s, padding-bottom .3s;
+    -moz-transition: padding-top .3s, padding-bottom .3s;
+    transition: padding-top .3s, padding-bottom .3s;
+    border: none;
     background-color: transparent;
     /*transition: background-color 0.3s;*/
   }
 
-  #mainNav .navbar-brand img {  
-    height: 50px;      
-    -webkit-transition: all .3s;             
-    -moz-transition: all .3s;                  
+  #mainNav .navbar-brand img {
+    height: 50px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
     transition: all .3s;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
     padding: 1.1em 1em !important;
   }
   #mainNav.navbar-shrink {
-    padding-top: 0;  
-    padding-bottom: 0;  
+    padding-top: 0;
+    padding-bottom: 0;
     background-color: #212529;
     /*background-color: #222c32;*/
   }
@@ -225,15 +226,15 @@ img::-moz-selection {
 /****************/
 header.masthead {
   height: 100vh;
-  text-align: center;  
-  color: white;  
-  background-image: url('../img/cells-black.gif');  
-  background-repeat: no-repeat;  
-  background-attachment: scroll;  
-  background-position: center center;          
-  -webkit-background-size: cover;             
-  -moz-background-size: cover;               
-  -o-background-size: cover;                  
+  text-align: center;
+  color: white;
+  background-image: url('../img/cells-black.gif');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 
   /* for centering intro text stuff */
@@ -245,16 +246,16 @@ header.masthead {
 header.masthead .intro-lead-in {
   font-family: 'Playfair Display', serif;
   font-size: 8em;
-  line-height: 40px;  
+  line-height: 40px;
   margin-bottom: 25px;
 }
 
 header.masthead .intro-heading {
   font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 4em;  
-  font-weight: 100;  
-  text-transform: lowercase;  
-  line-height: 60px;  
+  font-size: 4em;
+  font-weight: 100;
+  text-transform: lowercase;
+  line-height: 60px;
   padding-top: 30px;
   margin-bottom: 25px;
 }
@@ -266,8 +267,8 @@ header.masthead .intro-heading {
   }
 
   header.masthead .intro-heading {
-    font-size: 3.5em;  
-    font-weight: 100;  
+    font-size: 3.5em;
+    font-weight: 100;
     line-height: 40px;
     overflow: hidden;
     text-align: left;
@@ -348,7 +349,7 @@ button.btn-sm {
 /*    PROJECTS  */
 /****************/
 
-section#projects .card, 
+section#projects .card,
 section#events .card {
   max-width: 100%;
   text-align: center;
@@ -361,7 +362,7 @@ section#events .card {
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-section#projects .card:hover, 
+section#projects .card:hover,
 section#events .card:hover {
   /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
   /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
@@ -373,9 +374,9 @@ section#events .card:hover {
 }
 
 .modal .team-content img {
-  max-width: 50px;  
-  max-height: 50px;  
-  margin: 0;  
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0;
   border-radius: 10px;
 }
 
@@ -467,7 +468,7 @@ section#join h2 {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px #61857E, 
+  box-shadow: 0 0 0 4px #61857E,
     inset 0 2px 0 rgba(0, 0, 0, 0.08),
     0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
@@ -606,25 +607,25 @@ section#join h2 {
 /*     TEAM     */
 /****************/
 .team-member {
-  margin-bottom: 50px;  
+  margin-bottom: 50px;
   text-align: center;
 }
 
 .team-member img {
-  width: 225px;  
-  height: 225px;  
+  width: 225px;
+  height: 225px;
   border: 7px solid #fff;
 }
 
 .team-member h4 {
-  margin-top: 25px;  
-  margin-bottom: 0; 
+  margin-top: 25px;
+  margin-bottom: 0;
   text-transform: none;
 }
 
 .team-member p {
-  font-size: 1em;  
-  font-weight: thin;  
+  font-size: 1em;
+  font-weight: thin;
 }
 
 /****************/
@@ -636,14 +637,14 @@ footer {
 
 footer span.copyright {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 90%;  
-  line-height: 40px;  
+  font-size: 90%;
+  line-height: 40px;
   text-transform: none;
 }
 
 footer ul.quicklinks {
-  line-height: 40px;  
-  margin-bottom: 0;  
+  line-height: 40px;
+  margin-bottom: 0;
   text-transform: none;
 }
 
@@ -652,17 +653,17 @@ ul.social-buttons {
 }
 
 ul.social-buttons li a {
-  font-size: 20px;  
-  line-height: 40px;  
-  display: block;  
-  width: 40px;  
-  height: 40px;          
-  -webkit-transition: all .3s;             
-  -moz-transition: all .3s;                  
-  transition: all .3s;  
-  color: white;  
-  border-radius: 100%;  
-  outline: none;  
+  font-size: 20px;
+  line-height: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+  color: white;
+  border-radius: 100%;
+  outline: none;
   background-color: #212529;
 }
 
