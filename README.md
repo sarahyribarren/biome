@@ -1,14 +1,19 @@
 This is the BIOME Website. Checkout the GitHub Page at github.com/apandit42/biome .
 
+Each section separate background
+
 BIOME Website Organization Notes:
 NavBar:
-  BIOME Logo
-  Mission
-  Projects
-  iGEM
-  Events
-  People
-  Join
+  BIOME Logo (Left Align)
+  Mission (3 tiles)
+  Projects (dynamic tiles)
+  iGEM (link)
+  Events (dynamic tiles)
+  People (dynamic tiles)
+  Join (3 tiles)
+
+iGEM Page:
+tiles
 
 Mission:
   Big Heading Mission
