@@ -24,4 +24,17 @@ Mission:
       funding
   Tile 3:
     Present Research Work
-      Presentations to
+      Presentations to Stanford Bioscience community
+      continue project in lab
+      write report or paper
+
+Projects:
+  Current Projects Open:
+    Tiles:
+      Each Project has a Tile
+      Tile is picture for project
+      Inside Tile
+        Description:
+        Milestones:
+    Last Tile:
+      Each Project
