@@ -4,18 +4,1297 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Stanford BIOME</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link rel="shortcut icon" type="image/png" href="img/logos/biomelogo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BIOME</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="bootstrap-4.1.3-dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- boostrap modal fix based on: https://github.com/keaukraine/bootstrap4-fs-modal -->
+    <link href="css/bootstrap-fs-modal.css" rel="stylesheet">
+
+    <!-- Custom fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat: 400,500,700" rel="stylesheet" type="text/css"> -->
+
+    <!-- for splash screen -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+    <!--  section headings -->
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- subheadings, normal text, buttons -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- font awesome -->
+    <!--  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script> -->
+
+    <link rel="shortcut icon" type="image/png" href="img/logos/biomelogo.png">
   </head>
-  <body>
-    <video src="img/cells-mp4.mp4" autoplay loop muted></video>
-      
-    <div id="reactApp"></div>
-      
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel" src="js/reactTest.js"></script>
+
+  <body class="bootstrap-fs-modal">
+
+    <!--
+
+    ███╗   ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗
+    ████╗  ██║██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔══██╗
+    ██╔██╗ ██║███████║██║   ██║██████╔╝███████║██████╔╝
+    ██║╚██╗██║██╔══██║╚██╗ ██╔╝██╔══██╗██╔══██║██╔══██╗
+    ██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║
+    ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img src="img/logos/finalogo-light.png" class="d-inline-block align-top" alt="">
+          </a>
+        <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#mission">Join</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#events">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#join">Get Involved</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">People</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--
+    ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
+    ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+    ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+    ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+    ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+
+    -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-lead-in">BIOME</div>
+        <div class="intro-heading">Biological Interdisciplinary Open Maker Environment</div>
+        <a class="js-scroll-trigger" href="#mission">
+            <span class="fa-stack-2x fa-lg">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fa fa-angle-down fa-stack-2x"></i>
+            </span>
+        </a>
+      </div> <!-- container -->
+    </header>
+
+
+    <!--
+    ███╗   ███╗██╗███████╗███████╗██╗ ██████╗ ███╗   ██╗
+    ████╗ ████║██║██╔════╝██╔════╝██║██╔═══██╗████╗  ██║
+    ██╔████╔██║██║███████╗███████╗██║██║   ██║██╔██╗ ██║
+    ██║╚██╔╝██║██║╚════██║╚════██║██║██║   ██║██║╚██╗██║
+    ██║ ╚═╝ ██║██║███████║███████║██║╚██████╔╝██║ ╚████║
+    ╚═╝     ╚═╝╚═╝╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+
+    -->
+
+    <!-- banner for hackathon -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="top: -10px">
+      <strong>Interested in swag, getting to know bioscience community members, hands on problem solving, and <em>eating a whole lotta food?</em><br>Then check out our <a href="hackathon/hackathon.html" target="_blank" class="alert-link">upcoming 2019 BioHackathon!</a></strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <!-- banner for igem applications -->
+    <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+      Apply to receive a summer stipend working on the iGEM 2019 team <a href="https://goo.gl/forms/0gVIFt76JW8PeIdx1" target="_blank" class="alert-link">here</a>!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div> -->
+
+
+    <section id="mission">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-desc">
+              <h2 class="section-heading">Your Friendly On-Campus Bio Makerspace</h2>
+              <h3 class="section-subheading text-muted text-highlighted">BIOME is a student organization dedicated to providing open space for anyone interested in pursuing bioengineering and biology inspired projects.</h3>
+              <h3 class="section-subheading text-muted">Our mission is to provide any Stanford student with the skills, resources, and support to engage in a bio-hacking project. Bio-hacking includes any project that utilizes biological materials. We seek to educate our membership and the broader public and strive to broaden the scope of biotechnology beyond the conventional definition.
+
+              BIOME was founded in 2015 by Jordan Shapiro and Tina Ju and is supported by the Associated Students of Stanford University. Join our Slack for more details and information on all of our other events and workshops. If you are interested in joining the mailing list or you have any questions, email biome_exec@lists.stanford.edu.
+              </h3>
+            </div>
+
+            <div>
+              <button class="btn btn-custom btn-outline-success shadow-none" onclick="location.href = 'https://join.slack.com/t/biometeam/shared_invite/enQtMzc2NzAwNjMxOTU3LTM2YjRkYmQ5ZDM1YTQyNDdmMzFlYTk1N2MyNGExNzUwZjBhNzY0NjJkZWExYmJlNDFmYjcwODE5MDQ5ZDhjNjQ';">Join Slack</button>
+              <button class="btn btn-custom btn-outline-success shadow-none" onclick="location.href = 'https://mailman.stanford.edu/mailman/listinfo/biome_general';">Join Mailing List</button>
+
+              <!-- <button class="btn btn-custom btn-outline-success shadow-none" onclick="location.href = '#footer';">Join</button> -->
+                
+              <!-- <a href="https://mailman.stanford.edu/mailman/listinfo/biome_general" target="_blank">
+                <button class="btn btn-custom btn-outline-success shadow-none">Join Mailing List</button>
+              </a> -->
+            </div>
+           <!--  <iframe src="https://calendar.google.com/calendar/embed?src=stanford.edu_k97jeq494jl3dm8pisvk8b4l2c%40group.calendar.google.com&#038;ctz=America/Los_Angeles" frameborder="0" marginheight="0" marginwidth="0" style="width:800px;height:600px"></iframe> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--
+      ███████╗██╗   ██╗███████╗███╗   ██╗████████╗███████╗
+      ██╔════╝██║   ██║██╔════╝████╗  ██║╚══██╔══╝██╔════╝
+      █████╗  ██║   ██║█████╗  ██╔██╗ ██║   ██║   ███████╗
+      ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║   ╚════██║
+      ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║   ███████║
+      ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
+
+      -->
+      <section id="events">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <div class="section-desc">
+                <h2 class="section-heading text-uppercase">Events</h2>
+                <h3 class="section-subheading text-muted">Take a look at some of the cool events we run!</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="card" data-toggle="modal" data-target="#event-modal-1">
+                <img class="card-img-top" src="img/portfolio/igem-thumbnail.png">
+                <div class="card-body">
+                  <h4>iGEM</h4>
+                  <!-- <p class="card-text">Synthetic Biofuels</p> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="card" data-toggle="modal" data-target="#event-modal-2">
+                <img class="card-img-top" src="img/hackathon-resized.png">
+                <div class="card-body">
+                  <h4>BioHackathon</h4>
+                  <!-- <p class="card-text">12-hour</p> -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!--
+      ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
+      ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
+      ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   ███████╗
+      ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   ╚════██║
+      ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║
+      ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
+
+      -->
+      <section class="bg-light" id="projects">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <div class="section-desc">
+                <h2 class="section-heading text-uppercase">Projects</h2>
+                <h3 class="section-subheading text-muted">Excited about starting a project within BIOME? Here are some of the cool things we are doing!</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+          <!-- IN PROGRESS: replace portfolio modal links with cards -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-1">
+              <img class="card-img-top" src="img/portfolio/enzyme-thumbnail.png">
+              <div class="card-body">
+                <h4>DmJHAMT Purification</h4>
+                <p class="card-text">Engineering Biofuels</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-2">
+              <img class="card-img-top" src="img/portfolio/reccas9-thumbnail.png">
+              <div class="card-body">
+                <h4>recCas9</h4>
+                <p class="card-text">Gene Circuits</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-3">
+              <img class="card-img-top" src="img/portfolio/robot-thumbnail.png">
+              <div class="card-body">
+                <h4>Robobench</h4>
+                <p class="card-text">Automating Lab Procedures</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-4">
+              <img class="card-img-top" src="img/portfolio/project-filler.png">
+              <div class="card-body">
+                <h4>DNA Architect</h4>
+                <p class="card-text">Golden Gate Assembly</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-5">
+              <img class="card-img-top" src="img/portfolio/project-filler.png">
+              <div class="card-body">
+                <h4>Open Agriculture Project</h4>
+                <p class="card-text">Personal Food Computer</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+    </section>
+
+    <!--
+         ██╗ ██████╗ ██╗███╗   ██╗
+         ██║██╔═══██╗██║████╗  ██║
+         ██║██║   ██║██║██╔██╗ ██║
+    ██   ██║██║   ██║██║██║╚██╗██║
+    ╚█████╔╝╚██████╔╝██║██║ ╚████║
+     ╚════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
+
+    -->
+    <section id="join">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-desc">
+              <h2 class="section-heading text-uppercase">Get Involved</h2>
+              <h3 class="section-subheading text-muted">Come join us in the lab!</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div id="timeline" class="timeline-container">
+        <div class="timeline-block">
+          <div class="timeline-img"></div>
+
+          <div class="timeline-content">
+            <h4>Brainstorm</h4>
+            <h2>Think of an idea</h2>
+            <p>
+              Think of a project and submit a brief project overview to your respective advisor to look over. BIOME leadership will contact you about possible tweaks that need to be made, if any.
+              <a href="https://drive.google.com/open?id=1KABrwO4jvLhmNhKT_IDQoEwOJV8R-1Y3" target="_blank">(example overview)</a>
+            </p>
+          </div> <!-- timeline-content -->
+        </div> <!-- timeline-block -->
+
+        <div class="timeline-block">
+          <div class="timeline-img"></div>
+
+          <div class="timeline-content">
+            <h4>Pitch</h4>
+            <h2>Get started</h2>
+            <p>
+              Meet with BIOME Executive Board to go over possible tweaks as well as begin discussing project specifics. Once you are approved, you can present the project idea at one of our biweekly general meetings to gauge interest and recruit for your project.
+            </p>
+          </div> <!-- timeline-content -->
+        </div> <!-- timeline-block -->
+
+        <div class="timeline-block">
+          <div class="timeline-img"></div>
+
+          <div class="timeline-content">
+            <h4>Reach Out</h4>
+            <h2>Resources & Mentorship</h2>
+            <p>
+              BIOME will suggest faculty mentors to get in touch with about the project. Submit a brief project overview to your respective advisor for the Uytengsu Teaching Lab supervisors to look over. BIOME leadership will contact you about possible tweaks that need to be made, if any.
+            </p>
+          </div> <!-- timeline-content -->
+        </div> <!-- timeline-block -->
+
+        <div class="timeline-block">
+          <div class="timeline-img"></div>
+
+          <div class="timeline-content">
+            <h4>Lab Access</h4>
+            <h2>Safety forms</h2>
+            <p>
+              Fill out the
+              <a href="https://docs.google.com/a/stanford.edu/forms/d/e/1FAIpQLSehJxmqGn3wmm1_RkTyP04BZEdCrboMDaT2QtXSQw48lM8fOg/viewform?c=0&w=1" target="_blank">safety form</a> and go through relevant safety training. Each member should fill out a student club
+              <a href = "https://uytengsuteachinglab.stanford.edu/sites/default/files/student_project-club_agreement_form_20160913.pdf" target="_blank">project form</a>.
+              Be aware that this requires an advisor signature.
+            </p>
+          </div> <!-- timeline-content -->
+        </div> <!-- timeline-block -->
+
+        <div class="timeline-block">
+          <div class="timeline-img"></div>
+
+          <div class="timeline-content">
+            <h4>Congrats!</h4>
+            <h2>You're in!</h2>
+            <p>
+              Welcome to lab - We're excited to have you join us!
+            </p>
+          </div> <!-- timeline-content -->
+        </div> <!-- timeline-block -->
+      </div> <!-- timeline -->
+    </section>
+
+
+    <!--
+    ██████╗ ███████╗ ██████╗ ██████╗ ██╗     ███████╗
+    ██╔══██╗██╔════╝██╔═══██╗██╔══██╗██║     ██╔════╝
+    ██████╔╝█████╗  ██║   ██║██████╔╝██║     █████╗
+    ██╔═══╝ ██╔══╝  ██║   ██║██╔═══╝ ██║     ██╔══╝
+    ██║     ███████╗╚██████╔╝██║     ███████╗███████╗
+    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚══════╝
+
+    -->
+    <section id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-desc">
+            <h2 class="section-heading text-uppercase">Executive Board</h2>
+            <h3 class="section-subheading text-muted">Come meet the people who make BIOME so great!</h3>
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/alec2.jpg" alt="">
+              <h4>Alec Louren&ccedil;o</h4>
+              <p class="text-muted">Co-President</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/amara.jpg" alt="">
+              <h4>Amara Aarif</h4>
+              <p class="text-muted">Co-President</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/daniel.jpg" alt="">
+              <h4>Daniel Garcia</h4>
+              <p class="text-muted">Financial Officer</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/draven.jpg" alt="">
+              <h4>Draven Rane</h4>
+              <p class="text-muted">Lab Manager</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/ayush.jpg" alt="">
+              <h4>Ayush Pandit</h4>
+              <p class="text-muted">Community Manager</p>
+            </div>
+          </div>
+        </div>
+        <!--
+         <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+            </div>
+          </div>
+        -->
+      </div>
+    </section>
+
+
+    <!--
+    ███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗
+    ██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+    █████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+    ██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+    ██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+    ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
+    -->
+    <footer class="bg-light" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Biome 2018</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://join.slack.com/t/biometeam/shared_invite/enQtMzc2NzAwNjMxOTU3LTM2YjRkYmQ5ZDM1YTQyNDdmMzFlYTk1N2MyNGExNzUwZjBhNzY0NjJkZWExYmJlNDFmYjcwODE5MDQ5ZDhjNjQ" target="_blank">
+                    <i class="fa fa-slack" aria-hidden="true"></i>
+                  </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="https://mailman.stanford.edu/mailman/listinfo/biome_general" target="_blank">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                  </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <!-- <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!--
+    ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗    ███╗   ███╗ ██████╗ ██████╗  █████╗ ██╗     ███████╗
+    ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝    ████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██║     ██╔════╝
+    ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║       ██╔████╔██║██║   ██║██║  ██║███████║██║     ███████╗
+    ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║       ██║╚██╔╝██║██║   ██║██║  ██║██╔══██║██║     ╚════██║
+    ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║       ██║ ╚═╝ ██║╚██████╔╝██████╔╝██║  ██║███████╗███████║
+    ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝       ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+    -->
+
+    <!-- Modal 1: DJGANT Purification -->
+    <div class="modal fade" id="project-modal-1" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">DmJHAMT Purification</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <p>
+                      Drosophilia melanogaster juvenile hormone acid O-methytransferase (DmJHAMT) is an insect enzyme that natively methylates juvenile hormone acids, but also works on fatty acid substrates, such as lauric acid to produce fatty acid methyl esters (FAMEs), a form of biodiesel, both in vitro and in vivo. Production of biodiesel in bacteria using DmJHAMT is comparable to the most currently effective pathway for doing so and uses fewer enzymes, making it a promising candidate for further pathway optimization. Our goal is to express DmJHAMT in a lauric-acid secreting strain of cyanobacteria to produce an organism that can produce biodiesel directly from carbon dioxide.
+
+                      Although it is effective at producing biodiesel from a fatty acid substrate, DmJHAMT does so with poor kinetics. With the MSKC’s help, we plan to crystallize DmJHAMT and determine its structure so that we can tune its substrate selectivity and increase its kinetics to produce higher FAME titers at a lower cost to the cell.
+
+                    </p>
+                  </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-6 mx-auto project-logistics">
+                  <!-- TEAM -->
+                  <div class="team-content">
+                    <h2>Team</h2>
+                    <!-- (<i class="fa fa-star" aria-hidden="true" style="color: #FFD700;"></i> indicates team lead) -->
+                    <table class="table table-hover">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <!-- for the team leader indicator -->
+                            <div style="position: relative;">
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/alec2.jpg" alt="">
+                              </div>
+                            </div>
+                          </td>
+                          <td>Alec Lourenco</td>
+                          <td>lourenco@stanford.edu</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="project-team-member-table">
+                              <img class="" src="img/team/filler.jpg" alt="">
+                            </div>
+                          </td>
+                          <td>Mohammed Osman</td>
+                          <td>osmanmo@stanford.edu</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="project-team-member-table">
+                              <img class="" src="img/team/filler.jpg" alt="">
+                            </div>
+                          </td>
+                          <td>Logan Welch</td>
+                          <td>ltw427@stanford.edu</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- PROGRESS -->
+                  <div class="log-content">
+                    <h2>Milestones</h2>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Notes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>In Progress</td>
+                          <td>Cloning of DmJHAMT Protein Purification Plasmids</td>
+                        </tr>
+                        <tr>
+                          <td>9/24/17</td>
+                          <td>Project Approved for work in the Uytengsu Teaching Lab</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>  <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+
+    <!-- Modal 2: recCas9 -->
+    <div class="modal fade" id="project-modal-2" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">recCas9</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <p>
+                      In order to survive, cells must sense stimuli and respond accordingly. Responding "accordingly" requires some form of computation on the part of the cell - and because of evolution, this computation is done in a wide variety of ways and a variety of levels. Thus, rational engineering of a gene circuit that can take in multiple stimuli (scalable) and is designable (standardizable) by a human engineer is difficult. We are attempting to develop a platform for transcriptional regulation that addresses both of these challenges by using a recombinase-dCas9 fusion protein to act as an invertase to "flip" a region of DNA. The state of the DNA - flipped or unflipped - can be represented as either a 0 or 1, i.e. manipulated to perform logical operations.
+
+                      Current work is focused on testing the recCas9 fusion protein from Chaikind et al. 2016 to see if it can excise DNA in E. coli. We then hope to test its invertase activity and, if successful, use the protein to build an architecture for standardized, scalable logic gates.
+                  </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-6 mx-auto project-logistics">
+
+                  <!-- TEAM -->
+                  <div class="team-content">
+                    <h2>Team</h2>
+                      <!-- (<i class="fa fa-star" aria-hidden="true" style="color: #FFD700;"></i> indicates team lead) -->
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <!-- for the team leader indicator -->
+                              <div style="position: relative;">
+                                <div class="project-team-lead-table">
+                                  <img class="" src="img/team/alec.jpg" alt="">
+                                </div>
+                              </div>
+                            </td>
+                            <td>Alec Lourenco</td>
+                            <td>lourenco@stanford.edu</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="project-team-member-table">
+                                <img class="" src="img/team/filler.jpg" alt="">
+                              </div>
+                            </td>
+                            <td>Keaton Ollech</td>
+                            <td>kollech@stanford.edu</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  <!-- PROGRESS -->
+                  <div class="log-content">
+                    <h2>Milestones</h2>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Notes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>In Progress</td>
+                          <td>Cloning of recCas9 and reporter plasmid</td>
+                        </tr>
+                        <tr>
+                          <td>5/14/17</td>
+                          <td>Pivoted to using recCas9 as opposed to dCas9 for logic gate operation</td>
+                        </tr>
+                        <tr>
+                          <td>2/15/17</td>
+                          <td>Project Approved for work in the Uytengsu Teaching Lab</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>  <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+    <!-- Modal 3 : robobench -->
+     <div class="modal fade" id="project-modal-3" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Robobench</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <p>
+                      If working with a robot became as easy as working with an assistant, how would our relationship with lab automation change? This summer, we built a prototype of an inexpensive, real-time lab automation platform using the open-source Opentrons OT-1 robot. This platform removes the need for lengthy calibrations and is a first step towards accessible, effortless automation. A $40 camera and a 3D printed camera mount are used for the video feed. Real-time item calibration uses TensorFlow's Object Detection API and OpenCV. The frontend is built using React. Packaged code and hardware specs will be posted at https://github.com/EndyLab
+                    </p>
+                  </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-6 mx-auto project-logistics">
+                  <!-- TEAM -->
+                  <div class="team-content">
+                    <h2>Team</h2>
+                      <!-- (<i class="fa fa-star" aria-hidden="true" style="color: #FFD700;"></i> indicates team lead) -->
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/filler.jpg" alt="">
+                              </div>
+                            </td>
+                            <td>Michael Bereket</td>
+                            <td>mbereket@stanford.edu</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <!-- for the team leader indicator -->
+                              <div style="position: relative;">
+                                <div class="project-team-lead-table">
+                                  <img class="" src="img/team/ricky.jpg" alt="">
+                                </div>
+                              </div>
+                            </td>
+                            <td>Ricky Cordova</td>
+                            <td>rcdova@stanford.edu</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/filler.jpg" alt="">
+                              </div>
+                            </td>
+                            <td>Natasha Goenawan</td>
+                            <td>natagoh@stanford.edu</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <!-- for the team leader indicator -->
+                              <div style="position: relative;">
+                                <div class="project-team-lead-table">
+                                  <img class="" src="img/team/filler.jpg" alt="">
+                                </div>
+                              </div>
+                            </td>
+                            <td>Anton Jackson-Smith</td>
+                            <td>acjs@stanford.edu</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  <!-- PROGRESS -->
+                  <div class="log-content">
+                    <h2>Milestones</h2>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Notes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>9/8/17</td>
+                          <td>Presented results at Bioe REU poster session</td>
+                        </tr>
+                        <tr>
+                          <td>8/20/17</td>
+                          <td>Implemented web interface UI for robot</td>
+                        </tr>
+                        <tr>
+                          <td>8/15/17</td>
+                          <td>Designed and 3d printed custom camera and laboratory equipment mounts</td>
+                        </tr>
+                        <tr>
+                          <td>8/01/17</td>
+                          <td>Implemented computer vision system for object detection</td>
+                        </tr>
+                        <tr>
+                          <td>6/24/17</td>
+                          <td>Work on project begins</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>  <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+     <!-- Modal 4: Golden Gate Assembly -->
+    <div class="modal fade" id="project-modal-4" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Golden Gate Assembly</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <p>
+                      From biotechnology to pharmaceuticals to food,  a plethora of industries are in-part fueled by the ability to manipulate and manufacture DNA efficiently and precisely. This need from the industry in turn makes a process called DNA cloning an essential tool for research and innovation across fields. DNA cloning is - like the name entails - the process of ligasing shorter sequences of DNA together into the desired longer vector plasmid in order to replicate the targeted vector in E. coli cells. How can supply meet demand in an exponentially developing industry with ever-growing need? Endonuclease cloning has been a viable method for cloning DNA sequences since the late 1990s, such as the Golden Gate Assembly method which is well-regarded for its ability to prevent “scarring” when recognition sequences are removed and the focus of our project. However, the process of pipetting all the various components of the assembly process can be overwhelmingly tedious, time-consuming and inefficient with even small projects when done by hand. For that reason, BIOME decided to automate the Golden Gate Assembly molecular cloning process with the use of an OT-2 robot to augment efficiency and boost cost-effectiveness. We, however, extended our goal to potentially completely automate the DNA cloning process. Through our programs, a user could simply offer the DNA sequence of their desired vector plasmid and allow automation to do the rest. From segmenting the DNA into workable strands to order (as well as providing price estimates) to pipetting for Golden Gate Assembly, to performing the transformation of your complete DNA into E. coli cells and giving them a much-needed “water bath”, our project should make it as easy and precise as clicking a button to clone your vector plasmids. Additionally, our program intends to develop a protocol for assembling much larger and complex chains of DNA segments than what is conventional for Golden Gate Assembly - the typical limit (10+) for the number of segments that can be joined without a significant hit to the efficiency of Golden Gate Assembly.
+                    </p>
+                  </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-6 mx-auto project-logistics">
+                  <!-- TEAM -->
+                  <div class="team-content">
+                    <h2>Team</h2>
+                    <!-- (<i class="fa fa-star" aria-hidden="true" style="color: #FFD700;"></i> indicates team lead) -->
+                    <table class="table table-hover">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <!-- for the team leader indicator -->
+                            <div style="position: relative;">
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/filler.jpg" alt="">
+                              </div>
+                            </div>
+                          </td>
+                          <td>Draven Rane</td>
+                          <td>drane17@stanford.edu</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <!-- for the team leader indicator -->
+                            <div style="position: relative;">
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/filler.jpg" alt="">
+                              </div>
+                            </div>
+                          </td>
+                          <td>Sunnie Ma</td>
+                          <td>zixianma@stanford.edu</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- PROGRESS -->
+                  <div class="log-content">
+                    <h2>Milestones</h2>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Notes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>In Progress</td>
+                          <td>DNA cloning</td>
+                        </tr>
+                        <tr>
+                          <td>1/08/19</td>
+                          <td>Project Approved for work in the Uytengsu Teaching Lab</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>  <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+
+    <!-- Modal 5: OpenAg -->
+    <div class="modal fade" id="project-modal-5" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Open Agriculture Project</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <p>
+                      In this project we will build the Personal Food Computer, an open source grow chamber managed by the Open Agriculture project at the MIT Media Lab. The personal food computer is a controllable environment, made entirely of easily accessible parts, that can sit on your desktop. It allows users to monitor plant growth under controlled lighting, temperature, and humidity. The personal food computer has a community of growers, hackers, and bio enthusiasts supporting it. We hope to use this project to connect with the bio hacker community. We believe that low-cost, open source, modular research equipment is badly needed in the world today, and we want to use this build as an attempt to both learn what already exists in the space and evaluate where we might be able to contribute to the community going forward.
+
+                      More information about the MIT OpenAg Personal Food Computer 3.0 that we are going to build can be found here: https://wiki.openag.media.mit.edu/pfc_edu_3.0
+                    </p>
+                  </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-6 mx-auto project-logistics">
+                  <!-- TEAM -->
+                  <div class="team-content">
+                    <h2>Team</h2>
+                    <!-- (<i class="fa fa-star" aria-hidden="true" style="color: #FFD700;"></i> indicates team lead) -->
+                    <table class="table table-hover">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <!-- for the team leader indicator -->
+                            <div style="position: relative;">
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/filler.jpg" alt="">
+                              </div>
+                            </div>
+                          </td>
+                          <td>Richard Fusco</td>
+                          <td>rdf1@stanford.edu</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <!-- for the team leader indicator -->
+                            <div style="position: relative;">
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/filler.jpg" alt="">
+                              </div>
+                            </div>
+                          </td>
+                          <td>Rolando Cruz Perez</td>
+                          <td>rcperez@stanford.edu</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- PROGRESS -->
+                  <div class="log-content">
+                    <h2>Milestones</h2>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Notes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>In Progress</td>
+                          <td>Building</td>
+                        </tr>
+                        <tr>
+                          <td>1/08/19</td>
+                          <td>Project Approved for work in the Uytengsu Teaching Lab</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>  <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+  <!-- Modal 6: Acellular Evolution -->
+     <div class="modal fade" id="project-modal-6" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Acellular Evolution</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <p>
+                     The creation of a synthetic, understandable cell would mark a great leap forward for humanity’s understanding of the necessary components to create and sustain life and facilitate the eventual construction of designer organisms adept at performing specialized tasks. Self-replication not only fulfills a vital function for synthetic cells, but also is a prerequisite for evolution - which can be harnessed to optimize the functioning of other modules needed to sustain life (e.g. transcription, translation, energy generation). Therefore, we view genome self-replication as a necessary stepping stone to build a synthetic cell.
+                    </p>
+                  </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-6 mx-auto project-logistics">
+                  <!-- TEAM -->
+                  <div class="team-content">
+                    <h2>Team</h2>
+                      <!-- (<i class="fa fa-star" aria-hidden="true" style="color: #FFD700;"></i> indicates team lead) -->
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/alec2.jpg" alt="">
+                              </div>
+                            </td>
+                            <td>Alec Lourenco</td>
+                            <td>lourenco@stanford.edu</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <!-- for the team leader indicator -->
+                              <div style="position: relative;">
+                                <div class="project-team-lead-table">
+                                  <img class="" src="img/team/ayush.jpg" alt="">
+                                </div>
+                              </div>
+                            </td>
+                            <td>Ayush Pandit</td>
+                            <td>apandit@stanford.edu</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="project-team-lead-table">
+                                <img class="" src="img/team/daniel.jpg" alt="">
+                              </div>
+                            </td>
+                            <td>Daniel Garcia</td>
+                            <td>dgarcia6@stanford.edu</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  <!-- PROGRESS -->
+                  <div class="log-content">
+                    <h2>Milestones</h2>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Notes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1/10/19</td>
+                          <td>Began M13 self replicating bacteriophage experiments.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>  <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+
+    <!--
+    ███████╗██╗   ██╗███████╗███╗   ██╗████████╗    ███╗   ███╗ ██████╗ ██████╗  █████╗ ██╗     ███████╗
+    ██╔════╝██║   ██║██╔════╝████╗  ██║╚══██╔══╝    ████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██║     ██╔════╝
+    █████╗  ██║   ██║█████╗  ██╔██╗ ██║   ██║       ██╔████╔██║██║   ██║██║  ██║███████║██║     ███████╗
+    ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║       ██║╚██╔╝██║██║   ██║██║  ██║██╔══██║██║     ╚════██║
+    ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║       ██║ ╚═╝ ██║╚██████╔╝██████╔╝██║  ██║███████╗███████║
+    ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+    -->
+
+
+    <!-- Event Modal 1: iGEM -->
+     <div class="modal fade" id="event-modal-1" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">iGEM</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <h2>iGEM</h2>
+                  <img class="img-fluid d-block mx-auto" src="img/IGEM-animated.gif" alt="">
+                  <p>
+                    The <a href="http://www.igem.org">iGEM</a> (International Genetically Engineered Machines) competition is a global synthetic biology competition where student teams design, build, and test novel genetic devices in a collaborative forum. Teams generally begin research during the school year, and then work throughout the summer and into fall quarter. Projects culminate at the iGEM Jamboree, a conference in November 2018 where teams fly into Boston for a weekend of presenting, networking, and fun!
+                  </p>
+                </div>
+
+                <div class="col-lg-6 mx-auto project-logistics">
+
+                  <!-- APPLICATION -->
+                  <div class="team-content">
+                    <h2>Application</h2>
+                    <p>
+                      The 2019 BIOME iGEM Team is now active!
+                    </p>
+                    <a href="https://goo.gl/forms/0gVIFt76JW8PeIdx1" target="_blank">
+                      <button class="btn btn-custom btn-outline-success btn-md shadow-none"> Apply Here </button>
+                    </a>
+                  </div>
+
+                  <!-- CLASSES -->
+                  <div class="log-content">
+                    <h2>Classes</h2>
+                    <h3>Winter Class</h3>
+
+                    <p>
+                      This year's iGEM team will be creating a project that attempts to solve a well-defined need. We are identifying and selecting our project through the Stanford Biodesign process, a method that was initially developed for inventing medical devices. To get a head start on idea generation and project selection, BIOME hosted a 1-unit class in winter quarter, BioE 191 with Kara Rogers.
+                    </p>
+                    <a href="https://drive.google.com/open?id=1gYuM9hmmzpDrd4xUXTA5SuSsR1fK4MYb" target="_blank">
+                      <button class="btn btn-custom btn-outline-success btn-md shadow-none"> See Winter 2018 Course Content Here</button>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div> <!-- container -->
+
+          </div> <!-- modal-body -->
+
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+
+    <!-- Event Modal 2: BioHackathon-->
+     <div class="modal fade" id="event-modal-2" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">BioHackathon</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto" style="{width:100%; text-align:center;}">
+                  <h2>BioHackathon</h2>
+                  <img class="img-fluid d-block mx-auto" src="img/hackathon.png" alt="">
+                  <p>
+                    Beginners and experts alike are invited to hack with and for life in this interdisciplinary event open to all majors.
+
+                    Tackle wild challenges from amazing guests.
+                    Past challenges have come from The Tech Museum of Innovation, The Odin, and even The FBI.
+
+                    Meet and create with interesting faculty, companies, and speakers
+
+                    Build diverse projects in:
+                  </p>
+                  <ul style="{display: inline-block; text-align: left;}">
+                    <li>Hardware -- (mechanical, ee, …)</li>
+                    <li>Software -- (cs, bmc, …)</li>
+                    <li>Wetware -- (biology, bioengineering, …)</li>
+                    <li>Peopleware -- (education, ethics, policy, …)</li>
+                  </ul>
+                  <img src="img/hack18.jpg" style="height: 200px;";>
+                  <br>
+                </div>
+
+                <div class="col-lg-6 mx-auto project-logistics">
+                  <!-- APPLICATION -->
+                  <div class="team-content">
+                      <br>
+                      <a href="hackathon/hackathon.html" target="_blank">
+                      <button class="btn btn-custom btn-outline-success btn-md shadow-none">BioHackathon 2019</button>
+                      <p>
+                          <strong>Registration is open! Sign up now for this year!</strong>
+                        </p>
+                      </a>
+                    </div>
+
+                  <!-- CLASSES -->
+                  <div class="log-content">
+                    <h2>Past Hackathons</h2>
+                    <h3>Fall 2017</h3>
+                    <img src="img/hackathon.jpg" style="height: 200px;";>
+                    <a href="https://drive.google.com/drive/folders/0B5rvDVl87LtwRzNqQ0tnYU1Bdzg?usp=sharing" target="_blank">
+                      <button class="btn btn-custom btn-outline-success btn-md shadow-none"> See the presentations here! </button>
+                    </a>
+                    <h3>Spring 2017</h3>
+                    <a href="https://drive.google.com/open?id=0B5rvDVl87LtwY3BWSFItak1FaTQ" target="_blank">
+                      <button class="btn btn-custom btn-outline-success btn-md shadow-none"> See the presentations here! </button>
+                    </a>
+                    <h2>BioHackathon 2018</h2>
+                    <a href="https://drive.google.com/drive/folders/1GZJoOla1MQAbIchSNFfn81i0Q0Nodd8x?usp=sharing" target="_blank">
+                      <button class="btn btn-custom btn-outline-success btn-md shadow-none"> Pictures! </button>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div> <!-- container -->
+
+          </div> <!-- modal-body -->
+
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+
+    <!--
+         ██╗ █████╗ ██╗   ██╗ █████╗ ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗
+         ██║██╔══██╗██║   ██║██╔══██╗██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝
+         ██║███████║██║   ██║███████║███████╗██║     ██████╔╝██║██████╔╝   ██║
+    ██   ██║██╔══██║╚██╗ ██╔╝██╔══██║╚════██║██║     ██╔══██╗██║██╔═══╝    ██║
+    ╚█████╔╝██║  ██║ ╚████╔╝ ██║  ██║███████║╚██████╗██║  ██║██║██║        ██║
+     ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝
+
+    -->
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this website -->
+    <script src="js/main.js"></script>
+
+>>>>>>> 9068d2e8b556a6ccaffd426a45f6d6c2dc350b8a
   </body>
 </html>
