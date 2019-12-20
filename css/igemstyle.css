@@ -176,7 +176,6 @@ video {
     position: absolute;
 }
 
-<<<<<<< HEAD
 #reactApp {
     position: relative;
 }
@@ -210,6 +209,10 @@ video {
   }
 
   #mainNav .navbar-brand img {
+    height: 30px;
+  }
+
+  #NavBarLogoPic {
     height: 30px;
   }
 
