@@ -1,0 +1,535 @@
+<!-- REMEMBER: compress HTML @ https://htmlcompressor.com/compressor/ before pushing -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BIOME</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="bootstrap-4.1.3-dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- boostrap modal fix based on: https://github.com/keaukraine/bootstrap4-fs-modal -->
+    <link href="css/bootstrap-fs-modal.css" rel="stylesheet">
+
+    <!-- Custom fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat: 400,500,700" rel="stylesheet" type="text/css"> -->
+
+    <!-- for splash screen -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+    <!--  section headings -->
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- subheadings, normal text, buttons -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/igemstyle.css" rel="stylesheet">
+
+    <!-- font awesome -->
+    <!--  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script> -->
+
+    <link rel="shortcut icon" type="image/png" href="img/logos/biomelogo.png">
+  </head>
+
+  <body class="bootstrap-fs-modal">
+
+    <!--
+
+    ███╗   ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗
+    ████╗  ██║██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔══██╗
+    ██╔██╗ ██║███████║██║   ██║██████╔╝███████║██████╔╝
+    ██║╚██╗██║██╔══██║╚██╗ ██╔╝██╔══██╗██╔══██║██╔══██╗
+    ██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║
+    ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img src="img/logos/finalogo-light.png" class="d-inline-block align-top" alt="">
+          </a>
+        <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#mission">Join</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#events">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="igem.html">iGEM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#join">Get Involved</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#team">People</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--
+    ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
+    ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+    ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+    ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+    ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+
+    -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-lead-in">Stanford iGEM</div>
+        <div class="intro-heading">Stanford's Team for the International Genetically Engineered Machines competition</div>
+        <a class="js-scroll-trigger" href="#mission">
+            <span class="fa-stack-2x fa-lg">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fa fa-angle-down fa-stack-2x"></i>
+            </span>
+        </a>
+      </div> <!-- container -->
+    </header>
+
+    <!--
+    ███╗   ███╗██╗███████╗███████╗██╗ ██████╗ ███╗   ██╗
+    ████╗ ████║██║██╔════╝██╔════╝██║██╔═══██╗████╗  ██║
+    ██╔████╔██║██║███████╗███████╗██║██║   ██║██╔██╗ ██║
+    ██║╚██╔╝██║██║╚════██║╚════██║██║██║   ██║██║╚██╗██║
+    ██║ ╚═╝ ██║██║███████║███████║██║╚██████╔╝██║ ╚████║
+    ╚═╝     ╚═╝╚═╝╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+
+    -->
+
+    <section id="mission">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-desc">
+              <h3 class="section-subheading text-muted text-highlighted">
+                The iGEM (International Genetically Engineered Machines) competition is a global synthetic biology competition where student
+                teams design, build, and test novel genetic devices in a collaborative forum. Teams generally begin research during the school
+                year, and then work throughout the summer and into fall quarter. Projects culminate at the iGEM Jamboree, a conference in November
+                2020 where teams fly into Boston for a weekend of presenting, networking, and fun!
+              </h3>
+            </div>
+           </div>
+          </div>
+        </div>
+    </section>
+
+
+      <!--
+      ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
+      ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
+      ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   ███████╗
+      ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   ╚════██║
+      ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║
+      ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
+
+      -->
+      <section class="bg-light" id="projects">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <div class="section-desc">
+                <h2 class="section-heading text-uppercase">Interested in Stanford iGEM?</h2>
+                <h3 class="section-subheading text-muted">Learn more about how you can get involved, past projects, and the upcoming 2020 season!</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+          <!-- IN PROGRESS: replace portfolio modal links with cards -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-1">
+              <img class="card-img-top" src="img/igem/iGEMLogo.png">
+              <div class="card-body">
+                <h4>iGEM Overview</h4>
+                <p class="card-text">What is iGEM?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-2">
+              <img class="card-img-top" src="img/igem/2019Project.jpg">
+              <div class="card-body">
+                <h4>Stanford iGEM 2019</h4>
+                <p class="card-text">Our 2019 project on the DiCE System.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-3">
+              <img class="card-img-top" src="img/igem/StanfordLogo.png">
+              <div class="card-body">
+                <h4>2020 Application</h4>
+                <p class="card-text">Apply for the 2020 Team!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-4">
+              <img class="card-img-top" src="img/igem/teamPic1.jpg">
+              <div class="card-body">
+                <h4>2019 Team</h4>
+                <p class="card-text">Meet the Stanford 2019 Team.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-5">
+              <img class="card-img-top" src="img/igem/mentor.jpg">
+              <div class="card-body">
+                <h4>Interested in Mentoring?</h4>
+                <p class="card-text">Learn more about mentoring the 2020 Team.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card" data-toggle="modal" data-target="#project-modal-6">
+              <img class="card-img-top" src="img/igem/supportTeam.jpg">
+              <div class="card-body">
+                <h4>Want to Support Us?</h4>
+                <p class="card-text">Learn about ways to support the 2020 Team.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+
+
+    <!--
+    ███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗
+    ██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+    █████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+    ██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+    ██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+    ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
+    -->
+    <footer class="bg-light" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; BIOME 2018</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://join.slack.com/t/biometeam/shared_invite/enQtMzc2NzAwNjMxOTU3LTM2YjRkYmQ5ZDM1YTQyNDdmMzFlYTk1N2MyNGExNzUwZjBhNzY0NjJkZWExYmJlNDFmYjcwODE5MDQ5ZDhjNjQ" target="_blank">
+                    <i class="fa fa-slack" aria-hidden="true"></i>
+                  </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="https://mailman.stanford.edu/mailman/listinfo/biome_general" target="_blank">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                  </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!--
+    ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗    ███╗   ███╗ ██████╗ ██████╗  █████╗ ██╗     ███████╗
+    ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝    ████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██║     ██╔════╝
+    ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║       ██╔████╔██║██║   ██║██║  ██║███████║██║     ███████╗
+    ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║       ██║╚██╔╝██║██║   ██║██║  ██║██╔══██║██║     ╚════██║
+    ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║       ██║ ╚═╝ ██║╚██████╔╝██████╔╝██║  ██║███████╗███████║
+    ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝       ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+    -->
+
+    <!-- Modal 1: DJGANT Purification -->
+    <div class="modal fade" id="project-modal-1" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">iGEM Overview</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <img src="img/igem/iGEMLogo.png" style="height: 200px;";>
+                    <p>
+                      iGEM stands for the International Genetically Engineered Machines competition, an international competition where teams create, test, and present their
+                      own bioscience research projects involving genetic devices. The Stanford team is composed of 7-12 undergraduate students, who work on developing a project
+                      through a needs finding process and presenting at the annual Giant Jamboree, located in Boston. Click <a href="https://drive.google.com/file/d/1TOoJRwXdm6l2VabjHnq2VX8EVxWHSO48/view"> here to learn more </a>.
+                    </p>
+                  </div>
+                </div>
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+
+    <!-- Modal 2: recCas9 -->
+    <div class="modal fade" id="project-modal-2" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Stanford iGEM 2019</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <img src="img/igem/2019Project.jpg" style="height: 200px;";>
+                    <p>
+                      The current paradigm of part creation, characterization, and documentation is extremely rate-limiting for scientific discovery.
+                      The 2019 Stanford iGEM team envisioned an alternative model for facile part creation where final genetic device performance necessarily
+                      conforms to initial design specifications. To make this future a reality, we focused on developing self-selecting systems (SSS):
+                      directed evolution platforms that selectively amplify the genotypes corresponding to desirable phenotypes. Specifically, we
+                      developed Directed Chassis-agnostic Evolution, or DiCE, a novel, easy-to-implement selection-based directed evolution
+                      platform built off Qbeta replicase, an RNA-based RNA polymerase, capable of evolving proteins in vivo and in vitro. Furthermore, we generated standard
+                      selection schema compatible with PREDCEL (Heidelberg 2017) to expand the range of synthetic biological parts that can be created by any SSS.
+                      Taken together, our work on SSS presents a foundational advance towards a future where part creation is easier, faster, and more accessible.
+                      Learn more <a href="https://2019.igem.org/Team:Stanford"> here </a>.
+                    </p>
+                  </div>
+                </div> <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+    <!-- Modal 2: recCas9 -->
+    <div class="modal fade" id="project-modal-3" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">2020 Application</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <img src="img/igem/StanfordLogo.png" style="height: 200px;";>
+                    <p>
+                      The iGEM 2020 Application will be live soon! Click <a href="https://www.google.com/url?q=http://tinyurl.com/iGEM2020application&sa=D&ust=1576863067715000&usg=AFQjCNFg3VyOwn5SLPIlhdG0ycp4Q7TqcA"> this link </a>
+                      to access the application! All relevant application information and requirements are listed on the Google Form itself.
+                    </p>
+                  </div>
+                </div> <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+    <!-- Modal 2: recCas9 -->
+    <div class="modal fade" id="project-modal-3" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">2019 Team</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <img src="img/igem/teamPic1.jpg" style="height: 200px;";>
+                    <p>
+                      The 2019 Team was composed of 6 full time undergraduates, a volunteer member, 3 high school undergraduates, and
+                      received the help of many sponsors, graduate student mentors, as well as PIs. Learn more about our team <a href="https://www.google.com/url?q=https://2019.igem.org/Team:Stanford/Team&sa=D&ust=1576863067716000&usg=AFQjCNHi9zRIrgEvp3jauG9NYlJ1a9EqxA">
+                      here </a>.
+                    </p>
+                  </div>
+                </div> <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+    <!-- Modal 2: recCas9 -->
+    <div class="modal fade" id="project-modal-4" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Interested in Mentoring?</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <img src="img/igem/mentor.jpg" style="height: 200px;";>
+                    <p>
+                      Interested in mentoring? Contact this email: igem2019stanford@list.stanford.edu to learn about ways to get involved.
+                    </p>
+                  </div>
+                </div> <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+    <!-- Modal 2: recCas9 -->
+    <div class="modal fade" id="project-modal-5" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Want to Support Us?</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <img src="img/igem/supportTeam.jpg" style="height: 200px;";>
+                    <p>
+                      Want to support us? Get in contact with us at igem2019stanford@list.stanford.edu and help our team succeed in the 2020 season!
+                    </p>
+                  </div>
+                </div> <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+    <!-- Modal 2: recCas9 -->
+    <div class="modal fade" id="project-modal-6" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">recCas9</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row justify-content-around">
+                <!-- Project Details Go Here -->
+                <div class="col-lg-6 mx-auto">
+                  <div class="project-img">
+                    <img src="img/igem/hack18.jpg" style="height: 200px;";>
+                    <p>
+                      In order to survive, cells must sense stimuli and respond accordingly. Responding "accordingly" requires some form of computation on the part of the cell - and because of evolution, this computation is done in a wide variety of ways and a variety of levels. Thus, rational engineering of a gene circuit that can take in multiple stimuli (scalable) and is designable (standardizable) by a human engineer is difficult. We are attempting to develop a platform for transcriptional regulation that addresses both of these challenges by using a recombinase-dCas9 fusion protein to act as an invertase to "flip" a region of DNA. The state of the DNA - flipped or unflipped - can be represented as either a 0 or 1, i.e. manipulated to perform logical operations.
+                      Current work is focused on testing the recCas9 fusion protein from Chaikind et al. 2016 to see if it can excise DNA in E. coli. We then hope to test its invertase activity and, if successful, use the protein to build an architecture for standardized, scalable logic gates.
+                    </p>
+                  </div>
+                </div> <!-- col -->
+              </div> <!-- row -->
+            </div> <!-- container -->
+          </div> <!-- modal-body -->
+          <div class="modal-footer">
+            <button class="btn btn-custom btn-outline-secondary btn-md shadow-none" data-dismiss="modal">Close</button>
+          </div> <!-- modal-footer -->
+        </div> <!-- modal-content -->
+      </div>
+    </div>
+
+    <!--
+         ██╗ █████╗ ██╗   ██╗ █████╗ ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗
+         ██║██╔══██╗██║   ██║██╔══██╗██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝
+         ██║███████║██║   ██║███████║███████╗██║     ██████╔╝██║██████╔╝   ██║
+    ██   ██║██╔══██║╚██╗ ██╔╝██╔══██║╚════██║██║     ██╔══██╗██║██╔═══╝    ██║
+    ╚█████╔╝██║  ██║ ╚████╔╝ ██║  ██║███████║╚██████╗██║  ██║██║██║        ██║
+     ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝
+
+    -->
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this website -->
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
