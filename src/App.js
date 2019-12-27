@@ -1,16 +1,20 @@
 import React from 'react';
 import './App.css';
-import logo from './finalogo-light.png'
+import logo from './navBarLogo.png'
+import menuIcon from './menuIcon.svg'
 
 function App() {
   return (
     <>
       <NavBar />
-      <Page name="Mission" />
-      <Page name="Projects" />
-      <Page name="Events" />
-      <Page name="People" />
-      <Page name="Join" />
+      <div className="mainBody" >
+        <Page name="Home" />
+        <Page name="Mission" />
+        <Page name="Projects" />
+        <Page name="Events" />
+        <Page name="People" />
+        <Page name="Join" />
+      </div>
       <Footer />
     </>
   );
@@ -29,17 +33,50 @@ function NavBar() {
       <a href="./" className="NavBarText"> PROJECTS </a>
       <a href="./" className="NavBarText"> PEOPLE </a>
       <a href="./" className="NavBarText"> JOIN </a>
-      <NavDropDown className="NavDropDown" />
+      <NavDropDown />
     </div>
   );
 }
 
-function NavDropDown() {
-  return (
-    <>
+class NavDropDown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dropDownActive: false,
+    };
+  }
 
-    </>
-  );
+  toggleActive() {
+    let newState = {
+      dropDownActive: !this.state.dropDownActive,
+    };
+    this.setState(newState);
+  }
+
+  render() {
+    let navDropDownState = "NavDropDown";
+    let menuBarState = "MenuBar";
+    let menuTextState = "MenuBarText";
+
+    if (this.state.dropDownActive) {
+      navDropDownState += "Click";
+      menuBarState += "Click";
+      menuTextState += "Click";
+    }
+
+    return (
+      <>
+        <img alt="Navigation Bar Dropdown" src={menuIcon} className={navDropDownState} onClick={() => this.toggleActive()} />
+        <div className={menuBarState}>
+          <a href="./" className={menuTextState}> MISSION </a>
+          <a href="./" className={menuTextState}> EVENTS </a>
+          <a href="./" className={menuTextState}> PROJECTS </a>
+          <a href="./" className={menuTextState}> PEOPLE </a>
+          <a href="./" className={menuTextState}> JOIN </a>
+        </div>
+      </>
+    );
+  }
 }
 
 function Page() {

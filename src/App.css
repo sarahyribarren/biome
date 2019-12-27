@@ -4,21 +4,46 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/*
+  NAVBAR Functionality:
+  The .NavBar class div creates a flexbox display to house the logo (.NavBarLogo),
+  nav bar headers (.NavBarText) and the menu icon (.NavDropDown). It is set to
+  always float at the top, is the full viewport width (100vw), with a scaling
+  font size. On desktop, this flexbox defaults to a row display, with elements
+  vertically algined to the center. The logo is set to align to the left,
+  followed by variable space in the middle, and then the remaining elements
+  including the menu at the right, with scaling on hover and activity.
+  This NavBar is by default styled for desktop, with adjustments by smaller screens.
+  The menu by default is not available on desktop, and will only show on mobile,
+  or on viewports that are less than 720px wide. When clicked, the menu causes
+  a secondary dropdown to open another flexbox that has all the same links as
+  the original desktop header would have had.
+  NOTES:
+  - Limited to a max of 6-7 items in the top header for desktop. Can be readjusted by making
+    fonts etc smaller, but would not recommend modifying for usability and UX
+    experience. If needed, would recommend implementing code to trigger the move
+    of some less important header statements to the drop down menu and have it display
+    on desktop mode as well.
+  - For Mobile, the vertical height of the viewport is the limit on the max # of
+    headers available on the drop down. Temporary fix could be making the drop down menu
+    be organized by row rather than columns so that the wrap feature allows more text.
+    Also could create scrollable drop down, or just reorganize since that many elements seems
+    like bad design.
+*/
+
+/*********************/
+/* DESKTOP STANDARD */
+/********************/
 .NavBar {
   display: flex;
   position: fixed;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   width: 100vw;
   height: 6.5vh;
-  font-size: 1.2em;
   background-color: #1d1f33;
-}
-
-.NavBar > a:first-child {
-  margin-right: auto;
-  padding-left: 2vw;
 }
 
 .NavBarLogo {
@@ -26,18 +51,92 @@ body {
   transition: height 0.5s;
 }
 
-.NavBarLogo:hover, .NavBarLogo:active {
-  height: 5.5vh;
-}
-
 .NavBarText {
-  padding: 0 2vw;
+  padding: 0 1vw;
   font-family: 'Lato', sans-serif;
+  font-size: 1.2em;
   color: white;
   text-decoration: none;
   transition: color 0.5s;
 }
 
+.NavDropDown, .NavDropDownClick {
+  display: none;
+}
+
+.NavBar > a:first-child {
+  margin-right: auto;
+  padding-left: 2vw;
+}
+
+.NavBar > .NavBarText:last-of-type {
+  padding-right: 2vw;
+}
+
+.NavBarLogo:hover, .NavBarLogo:active {
+  height: 5.5vh;
+}
+
 .NavBarText:hover, .NavBarText:active {
   color: #ffba00
+}
+
+/*********************/
+/* MOBILE STANDARD  */
+/********************/
+.MenuBar, .MenuBarClick {
+  display: flex;
+  transform: scaleY(0);
+  transform-origin: top;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100vw;
+  background-color: #3d405c;
+  transition: transform 0.5s;
+}
+
+.MenuBarText, .MenuBarTextClick {
+  font-size: 1.2em;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-decoration: none;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+}
+
+.MenuBarClick {
+  transform: scaleY(1);
+}
+
+.MenuBarTextClick {
+  transform: scaleY(1);
+}
+
+/*
+  Show the .NavDropDown element, enabling the display of the element, and
+  hide the old NavBarText, since there's now a menu dropdown. The media query only
+  holds specific CSS for styles that need to change. Everything else is outlined below.
+*/
+@media (max-width: 720px) {
+  .NavBarText {
+    display: none;
+  }
+
+  .NavDropDown, .NavDropDownClick {
+    display: inherit;
+    height: 4vh;
+    margin-right: 2vw;
+    transition: transform 0.5s;
+  }
+
+  .NavDropDownClick {
+    transform: rotate(90deg);
+  }
+}
+
+@media (min-width: 721px) {
+  .MenuBar, .MenuBarClick {
+    display: none;
+  }
 }
