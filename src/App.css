@@ -4,6 +4,22 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.mainBody {
+  padding-top: 6.5vh;
+  font-size: 1em;
+}
+
+.Page {
+  margin: auto;
+  width: 80vw;
+  overflow-x: hidden;
+}
+
+.BackDropVid {
+  z-index: -1;
+}
+
+
 /*
   NAVBAR Functionality:
   The .NavBar class div creates a flexbox display to house the logo (.NavBarLogo),
@@ -37,6 +53,8 @@ body {
 .NavBar {
   display: flex;
   position: fixed;
+  top: 0;
+  left: 0;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
@@ -94,6 +112,7 @@ body {
   width: 100vw;
   background-color: #3d405c;
   transition: transform 0.5s;
+  padding: 1vh 0;
 }
 
 .MenuBarText, .MenuBarTextClick {
@@ -102,7 +121,7 @@ body {
   color: white;
   text-decoration: none;
   transform: scaleY(0);
-  transition: transform 0.5s;
+  transition: transform 0.5s, color 0.5s;
 }
 
 .MenuBarClick {
@@ -111,6 +130,10 @@ body {
 
 .MenuBarTextClick {
   transform: scaleY(1);
+}
+
+.MenuBarTextClick:hover, .MenuBarTextClick:active {
+  color: #ffba00
 }
 
 /*
