@@ -17,6 +17,9 @@ body {
 
 .BackDropVid {
   z-index: -1;
+  object-fit: fill;
+  width: auto;
+  height: 100%;
 }
 
 
@@ -112,7 +115,8 @@ body {
   width: 100vw;
   background-color: #3d405c;
   transition: transform 0.5s;
-  padding: 1vh 0;
+  padding: 0;
+  margin: 0;
 }
 
 .MenuBarText, .MenuBarTextClick {
@@ -126,6 +130,8 @@ body {
 
 .MenuBarClick {
   transform: scaleY(1);
+  padding: 1vh 0;
+  margin: auto;
 }
 
 .MenuBarTextClick {

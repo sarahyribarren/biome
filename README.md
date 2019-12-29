@@ -1,16 +1,20 @@
 PageList/
+  PageList.pl
   Page1/
     Page1.page
     tile1.tile
     tile1.tile
 
 
+PageList.pl
+name of page: header
+
 PageName:
 Mission
 PageDescription:
 Our Goal is to provide
 Tiles:
-name1
+name1.tile
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
