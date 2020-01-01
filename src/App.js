@@ -5,7 +5,7 @@ import menuIcon from './menuIcon.svg'
 import video from './space.mp4'
 
 function App() {
-  
+
   return (
     <>
       <NavBar />
@@ -94,7 +94,7 @@ function Page() {
 function BackDrop(props) {
   if (props.contType === "video") {
     return (
-      <video autoPlay loop playsInline className="BackDropVid">
+      <video autoPlay muted loop playsInline className="BackDropVid">
         <source src={video} />
       </video>
     );

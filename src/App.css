@@ -16,8 +16,9 @@ body {
 }
 
 .BackDropVid {
+  display: block;
   z-index: -1;
-  object-fit: fill;
+  object-fit: cover;
   width: auto;
   height: 100%;
 }
@@ -63,12 +64,12 @@ body {
   align-items: center;
   justify-content: flex-end;
   width: 100vw;
-  height: 6.5vh;
+  height: 7vh;
   background-color: #1d1f33;
 }
 
 .NavBarLogo {
-  height: 4.5vh;
+  height: 4.75vh;
   transition: height 0.5s;
 }
 
@@ -95,7 +96,7 @@ body {
 }
 
 .NavBarLogo:hover, .NavBarLogo:active {
-  height: 5.5vh;
+  height: 5.75vh;
 }
 
 .NavBarText:hover, .NavBarText:active {
@@ -155,7 +156,7 @@ body {
   .NavDropDown, .NavDropDownClick {
     display: inherit;
     height: 4vh;
-    margin: 0.5vh 3vw 0 0;
+    margin: 0.5vh 5vw 0 0;
     transition: transform 0.5s;
   }
 
