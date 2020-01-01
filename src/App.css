@@ -22,7 +22,6 @@ body {
   height: 100%;
 }
 
-
 /*
   NAVBAR Functionality:
   The .NavBar class div creates a flexbox display to house the logo (.NavBarLogo),
@@ -58,6 +57,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
@@ -87,11 +87,11 @@ body {
 
 .NavBar > a:first-child {
   margin-right: auto;
-  padding-left: 2vw;
+  padding-left: 3vw;
 }
 
 .NavBar > .NavBarText:last-of-type {
-  padding-right: 2vw;
+  padding-right: 3vw;
 }
 
 .NavBarLogo:hover, .NavBarLogo:active {
@@ -155,12 +155,16 @@ body {
   .NavDropDown, .NavDropDownClick {
     display: inherit;
     height: 4vh;
-    margin-right: 2vw;
+    margin: 0.5vh 3vw 0 0;
     transition: transform 0.5s;
   }
 
   .NavDropDownClick {
     transform: rotate(90deg);
+  }
+
+  .NavBar > a:first-child {
+    margin-top: 0.5vh;
   }
 }
 
