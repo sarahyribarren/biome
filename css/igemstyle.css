@@ -2,6 +2,17 @@ body {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;  overflow-x: hidden;
 }
 
+/* NEW ADDITION 1/5 */
+.project-img, .project-img > img {
+  float: left;
+  padding-right: 2vw;
+  max-width: 300px;
+}
+
+/* .col-lg-6, .mx-auto {
+  min-width: 600px;
+} */
+
 p {
   line-height: 1.75;
 }
@@ -45,7 +56,7 @@ section h3.section-subheading {
   font-weight: 300;
   font-style: italic;
   text-transform: none;
-  margin-bottom: 5em;
+  margin-bottom: 20px;
 }
 
 section h3.text-highlighted {
